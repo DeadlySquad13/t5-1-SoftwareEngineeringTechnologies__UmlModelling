@@ -1,11 +1,11 @@
 # Отчёт Пакало А.С. ИУ5-12М по лабораторной работе № 4
 
 ## Прототип пользовательского интерфейса
-![test]("./assets/Interface1.png")
-![test]("./assets/Interface2.png")
-![test]("./assets/Interface3.png")
-![test]("./assets/Interface4.png")
-![test]("./assets/Interface5.png")
+![Interface1]("./assets/Interface1.png")
+![Interface2]("./assets/Interface2.png")
+![Interface3]("./assets/Interface3.png")
+![Interface4]("./assets/Interface4.png")
+![Interface5]("./assets/Interface5.png")
 
 ## Диаграмма прецедентов
 ![прецеденты](./assets/UseCase.png)
@@ -42,6 +42,7 @@
 - Дизайн должен быть похож на дизайн GitHub.
 - Программа должна быть реализована в браузере.
 - Алгоритм оценки должен быть реализован с использованием большой языковой модели.
+- Скорость ответа не должна превышать 200 мс.
 
 ## Спецификация прецедентов
 Описание основных прецедентов для АСУ "Repo Analyzer":
