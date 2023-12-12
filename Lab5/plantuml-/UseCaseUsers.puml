@@ -1,0 +1,53 @@
+@startuml
+left to right direction
+skinparam linetype polyline
+
+:Пользователь: as U
+:Авторизованный пользователь: as AU
+
+frame RepoAnalyzer {
+    (Поиск GitHub репозитория) as (search)
+    (Задание параметра фильтрации поиска репозиториев) as (selectSearchParams)
+    (Просмотр найденных репозиториев) as (lookAtList)
+    (Фильтрация списка репозиториев) as (filter)
+    (Выбор репозитория из списка найденных) as (choose)
+    (Просмотр выбранных репозиториев) as (lookAtChosen)
+    (Просмотр характеристик репозитория) as (examineParams)
+    (Просмотр оценки репозитория) as (examineScore)
+    (Удаление репозитория из списка) as (remove)
+    (Выбор репозитория для детального сравнения) as (chooseForDetailed)
+    (Просмотр выбранных для детального сравнения репозитория) as (lookAtDetailed)
+
+    U --> (search)
+    U --> (selectSearchParams)
+    U --> (lookAtList)
+    U --> (filter)
+    U --> (choose)
+    U --> (lookAtChosen)
+    U --> (remove)
+    U --> (chooseForDetailed)
+    U --> (lookAtDetailed)
+
+    (lookAtChosen) ..> (examineParams) : include
+    (lookAtChosen) ..> (examineScore) : include
+
+    (Просмотр графика используемых языков) as (examineLanguagesGraph)
+    (Просмотр графика вклада участников проекта) as (examineContributorsGraph)
+
+    (lookAtDetailed) ..> (examineLanguagesGraph) : include
+    (lookAtDetailed) ..> (examineContributorsGraph) : include
+
+    (filter) .> (search) : extend
+    (selectSearchParams) .> (search) : extend
+
+    (Авторизация в GitHub) as (auth)
+    (Доступ к приватным репозиториям) as (accessPrivate)
+
+    U --> (auth)
+
+    AU -|> U
+    AU --> (accessPrivate)
+    (auth) --> (accessPrivate)
+}
+
+@enduml
